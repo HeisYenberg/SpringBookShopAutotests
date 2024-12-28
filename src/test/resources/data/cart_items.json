@@ -1,0 +1,82 @@
+[
+  {
+    "quantity": 1,
+    "book_id": 21,
+    "book_title": "Отцы и дети",
+    "image_name": "1710197956343_fathers_and_childrens.jpg",
+    "book_price": 219,
+    "user_id": 2
+  },
+  {
+    "quantity": 1,
+    "book_id": 20,
+    "book_title": "Собачье сердце",
+    "image_name": "1710197852252_dogs_heart.jpg",
+    "book_price": 219,
+    "user_id": 2
+  },
+  {
+    "quantity": 1,
+    "book_id": 19,
+    "book_title": "Портрет Дориана Грея",
+    "image_name": "1710197406778_portrait_of_dorian_grey.jpg",
+    "book_price": 513,
+    "user_id": 2
+  },
+  {
+    "quantity": 1,
+    "book_id": 18,
+    "book_title": "Горе от ума",
+    "image_name": "1710197198433_sad_but_smart.jpg",
+    "book_price": 211,
+    "user_id": 2
+  },
+  {
+    "quantity": 1,
+    "book_id": 17,
+    "book_title": "Дюна",
+    "image_name": "1709537984820_dune.jpg",
+    "book_price": 756,
+    "user_id": 2
+  },
+  {
+    "quantity": 1,
+    "book_id": 16,
+    "book_title": "Ромео и Джульетта. Отелло",
+    "image_name": "1709509218124_romeo_and_juliet.jpg",
+    "book_price": 229,
+    "user_id": 2
+  },
+  {
+    "quantity": 1,
+    "book_id": 15,
+    "book_title": "Герой нашего времени",
+    "image_name": "1709480897211herous_of_our_time.jpg",
+    "book_price": 250,
+    "user_id": 2
+  },
+  {
+    "quantity": 1,
+    "book_id": 14,
+    "book_title": "Капитанская дочка",
+    "image_name": "1709480823453captains_dother.jpg",
+    "book_price": 200,
+    "user_id": 2
+  },
+  {
+    "quantity": 1,
+    "book_id": 13,
+    "book_title": "Мартин Иден",
+    "image_name": "1709480739133martin_iden.jpg",
+    "book_price": 538,
+    "user_id": 2
+  },
+  {
+    "quantity": 1,
+    "book_id": 12,
+    "book_title": "Мертвые души",
+    "image_name": "1709454313191dead_souls.jpg",
+    "book_price": 200,
+    "user_id": 2
+  }
+]
