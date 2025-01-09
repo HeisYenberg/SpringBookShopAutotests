@@ -1,5 +1,15 @@
 package com.heisyenberg.tests;
 
+import static com.codeborne.selenide.Selenide.open;
+import static com.heisyenberg.data.BookData.EMPTY_AUTHOR_ERROR_MESSAGE;
+import static com.heisyenberg.data.BookData.EMPTY_DESCRIPTION_ERROR_MESSAGE;
+import static com.heisyenberg.data.BookData.EMPTY_GENRE_ERROR_MESSAGE;
+import static com.heisyenberg.data.BookData.EMPTY_PRICE_ERROR_MESSAGE;
+import static com.heisyenberg.data.BookData.IMAGE_FILE_PATH;
+import static com.heisyenberg.data.BookData.PRICE_TO_LOW_ERROR_MESSAGE;
+import static com.heisyenberg.data.LoginData.ADMIN_EMAIL;
+import static com.heisyenberg.data.LoginData.ADMIN_PASSWORD;
+
 import com.heisyenberg.models.Book;
 import com.heisyenberg.pages.BooksPage;
 import com.heisyenberg.pages.EditBookPage;
@@ -10,16 +20,6 @@ import io.qameta.allure.Story;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import static com.codeborne.selenide.Selenide.open;
-import static com.heisyenberg.data.BookData.EMPTY_AUTHOR_ERROR_MESSAGE;
-import static com.heisyenberg.data.BookData.EMPTY_DESCRIPTION_ERROR_MESSAGE;
-import static com.heisyenberg.data.BookData.EMPTY_GENRE_ERROR_MESSAGE;
-import static com.heisyenberg.data.BookData.EMPTY_PRICE_ERROR_MESSAGE;
-import static com.heisyenberg.data.BookData.IMAGE_FILE_PATH;
-import static com.heisyenberg.data.BookData.PRICE_TO_LOW_ERROR_MESSAGE;
-import static com.heisyenberg.data.LoginData.ADMIN_EMAIL;
-import static com.heisyenberg.data.LoginData.ADMIN_PASSWORD;
 
 @Feature("Edit book page")
 public class EditBookTest extends BaseTest {

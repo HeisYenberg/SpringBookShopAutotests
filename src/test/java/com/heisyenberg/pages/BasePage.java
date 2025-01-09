@@ -1,8 +1,5 @@
 package com.heisyenberg.pages;
 
-import com.codeborne.selenide.SelenideElement;
-import io.qameta.allure.Step;
-
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.have;
 import static com.codeborne.selenide.Condition.visible;
@@ -12,6 +9,9 @@ import static com.heisyenberg.data.HeaderData.SHOP_TITLE;
 import static com.heisyenberg.utils.ElementsUtil.checkImageSrc;
 import static com.heisyenberg.utils.ElementsUtil.checkValidationMessage;
 import static com.heisyenberg.utils.ElementsUtil.waitAndClick;
+
+import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 public abstract class BasePage {
     private final SelenideElement headerTitle = $(".navbar-brand");

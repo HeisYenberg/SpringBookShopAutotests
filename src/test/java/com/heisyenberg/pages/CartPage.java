@@ -1,13 +1,5 @@
 package com.heisyenberg.pages;
 
-import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
-import com.heisyenberg.models.CartItem;
-import io.qameta.allure.Step;
-
-import java.util.List;
-
 import static com.codeborne.selenide.Condition.be;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.have;
@@ -22,6 +14,13 @@ import static com.heisyenberg.utils.ElementsUtil.checkImageSrc;
 import static com.heisyenberg.utils.ElementsUtil.scrollToElement;
 import static com.heisyenberg.utils.ElementsUtil.waitAndClick;
 import static java.lang.String.format;
+
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
+import com.heisyenberg.models.CartItem;
+import io.qameta.allure.Step;
+import java.util.List;
 
 public class CartPage extends BasePage {
     private final SelenideElement headerTitle = $("h2");

@@ -1,11 +1,5 @@
 package com.heisyenberg.pages;
 
-import com.codeborne.selenide.SelenideElement;
-import com.heisyenberg.models.Book;
-import io.qameta.allure.Step;
-
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.be;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.exactValue;
@@ -13,6 +7,11 @@ import static com.codeborne.selenide.Condition.have;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.heisyenberg.utils.ElementsUtil.waitAndClick;
+
+import com.codeborne.selenide.SelenideElement;
+import com.heisyenberg.models.Book;
+import io.qameta.allure.Step;
+import java.io.File;
 
 public class EditBookPage extends BasePage {
     private final SelenideElement title = $("h2");

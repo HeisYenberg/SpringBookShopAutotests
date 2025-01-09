@@ -20,74 +20,60 @@ import static com.heisyenberg.data.LoginData.USER_USERNAME;
 
 @Feature("Login page")
 public class LoginTest extends BaseTest {
-    private BooksPage booksPage;
-    private LoginPage loginPage;
+  private BooksPage booksPage;
+  private LoginPage loginPage;
 
-    @BeforeMethod
-    public void setUp() {
-        booksPage = open(BooksPage.PAGE_URL, BooksPage.class);
-        loginPage = booksPage.clickLoginButton();
-    }
+  @BeforeMethod
+  public void setUp() {
+    booksPage = open(BooksPage.PAGE_URL, BooksPage.class);
+    loginPage = booksPage.clickLoginButton();
+  }
 
-    @Story("Check login as admin")
-    @Test(description = "Check login as admin")
-    public void checkLoginAsAdmin() {
-        loginPage
-                .setEmailInput(ADMIN_EMAIL)
-                .setPasswordInput(ADMIN_PASSWORD)
-                .clickSubmitLoginButton();
-        booksPage
-                .checkOpen()
-                .checkAdminRoleHeader(ADMIN_USERNAME)
-                .clickLogoutButton();
-    }
+  @Story("Check login as admin")
+  @Test(description = "Check login as admin")
+  public void checkLoginAsAdmin() {
+    loginPage.setEmailInput(ADMIN_EMAIL).setPasswordInput(ADMIN_PASSWORD).clickSubmitLoginButton();
+    booksPage.checkOpen().checkAdminRoleHeader(ADMIN_USERNAME).clickLogoutButton();
+  }
 
-    @Story("Check login as user")
-    @Test(description = "Check login as user")
-    public void checkLoginAsUser() {
-        loginPage
-                .setEmailInput(USER_EMAIL)
-                .setPasswordInput(USER_PASSWORD)
-                .clickSubmitLoginButton();
-        booksPage
-                .checkOpen()
-                .checkUserRoleHeader(USER_USERNAME)
-                .clickLogoutButton();
-    }
+  @Story("Check login as user")
+  @Test(description = "Check login as user")
+  public void checkLoginAsUser() {
+    loginPage.setEmailInput(USER_EMAIL).setPasswordInput(USER_PASSWORD).clickSubmitLoginButton();
+    booksPage.checkOpen().checkUserRoleHeader(USER_USERNAME).clickLogoutButton();
+  }
 
-    @Story("Check submitting empty email")
-    @Test(description = "Check submitting empty email")
-    public void checkSubmittingEmptyEmail() {
-        loginPage
-                .clickLoginButton()
-                .checkEmailValidationMassage(EMPTY_FIELD_ERROR);
-    }
+  @Story("Check submitting empty email")
+  @Test(description = "Check submitting empty email")
+  public void checkSubmittingEmptyEmail() {
+    loginPage.clickLoginButton().checkEmailValidationMassage(EMPTY_FIELD_ERROR);
+  }
 
-    @Story("Check submitting invalid email")
-    @Test(description = "Check submitting invalid email")
-    public void checkSubmittingInvalidEmail() {
-        loginPage
-                .setEmailInput(USER_PASSWORD)
-                .clickSubmitLoginButton()
-                .checkEmailValidationMassage(String.format(INVALID_EMAIL_ADDRESS_FORMAT, USER_PASSWORD));
-    }
+  @Story("Check submitting invalid email")
+  @Test(description = "Check submitting invalid email")
+  public void checkSubmittingInvalidEmail() {
+    loginPage
+        .setEmailInput(USER_PASSWORD)
+        .clickSubmitLoginButton()
+        .checkEmailValidationMassage(String.format(INVALID_EMAIL_ADDRESS_FORMAT, USER_PASSWORD));
+  }
 
-    @Story("Check submitting empty password")
-    @Test(description = "Check submitting empty password")
-    public void checkSubmittingEmptyPassword() {
-        loginPage
-                .setEmailInput(ADMIN_EMAIL)
-                .clickLoginButton()
-                .checkPasswordValidationMessage(EMPTY_FIELD_ERROR);
-    }
+  @Story("Check submitting empty password")
+  @Test(description = "Check submitting empty password")
+  public void checkSubmittingEmptyPassword() {
+    loginPage
+        .setEmailInput(ADMIN_EMAIL)
+        .clickLoginButton()
+        .checkPasswordValidationMessage(EMPTY_FIELD_ERROR);
+  }
 
-    @Story("Check submitting incorrect credentials")
-    @Test(description = "Check submitting incorrect credentials")
-    public void checkSubmittingIncorrectCredentials() {
-        loginPage
-                .setEmailInput(ADMIN_EMAIL)
-                .setPasswordInput(USER_PASSWORD)
-                .clickSubmitLoginButton()
-                .checkAuthorizationErrorMessage(INVALID_EMAIL_OR_PASSWORD_ERROR);
-    }
+  @Story("Check submitting incorrect credentials")
+  @Test(description = "Check submitting incorrect credentials")
+  public void checkSubmittingIncorrectCredentials() {
+    loginPage
+        .setEmailInput(ADMIN_EMAIL)
+        .setPasswordInput(USER_PASSWORD)
+        .clickSubmitLoginButton()
+        .checkAuthorizationErrorMessage(INVALID_EMAIL_OR_PASSWORD_ERROR);
+  }
 }

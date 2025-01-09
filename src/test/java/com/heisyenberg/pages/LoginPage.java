@@ -1,8 +1,5 @@
 package com.heisyenberg.pages;
 
-import com.codeborne.selenide.SelenideElement;
-import io.qameta.allure.Step;
-
 import static com.codeborne.selenide.Condition.be;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.have;
@@ -12,6 +9,9 @@ import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.urlContaining;
 import static com.heisyenberg.utils.ElementsUtil.checkValidationMessage;
 import static com.heisyenberg.utils.ElementsUtil.waitAndClick;
+
+import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 public class LoginPage extends BasePage {
     public static final String PAGE_URL = "/login";

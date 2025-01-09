@@ -1,5 +1,11 @@
 package com.heisyenberg.tests;
 
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.refresh;
+import static com.heisyenberg.data.LoginData.USER_EMAIL;
+import static com.heisyenberg.data.LoginData.USER_ID;
+import static com.heisyenberg.data.LoginData.USER_PASSWORD;
+
 import com.heisyenberg.models.CartItem;
 import com.heisyenberg.pages.BooksPage;
 import com.heisyenberg.pages.CartPage;
@@ -7,18 +13,11 @@ import com.heisyenberg.repositrories.CartRepository;
 import com.heisyenberg.utils.JsonDeserializerUtil;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
+import java.util.List;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import java.util.List;
-
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.refresh;
-import static com.heisyenberg.data.LoginData.USER_EMAIL;
-import static com.heisyenberg.data.LoginData.USER_ID;
-import static com.heisyenberg.data.LoginData.USER_PASSWORD;
 
 @Feature("Cart page")
 public class CartTest extends BaseTest {

@@ -1,10 +1,5 @@
 package com.heisyenberg.pages;
 
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
-import com.heisyenberg.models.Book;
-import io.qameta.allure.Step;
-
 import static com.codeborne.selenide.Condition.be;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.have;
@@ -12,6 +7,11 @@ import static com.codeborne.selenide.Condition.interactable;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
+import com.heisyenberg.models.Book;
+import io.qameta.allure.Step;
 
 public class BookPage extends BasePage {
     private final SelenideElement title = $(".card-title");

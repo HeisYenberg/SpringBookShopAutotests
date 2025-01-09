@@ -1,15 +1,5 @@
 package com.heisyenberg.tests;
 
-import com.heisyenberg.models.Book;
-import com.heisyenberg.pages.AddBookPage;
-import com.heisyenberg.pages.BooksPage;
-import com.heisyenberg.repositrories.BooksRepository;
-import com.heisyenberg.utils.DataGenerationUtil;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
 import static com.codeborne.selenide.Selenide.open;
 import static com.heisyenberg.data.BookData.EMPTY_AUTHOR_ERROR_MESSAGE;
 import static com.heisyenberg.data.BookData.EMPTY_DESCRIPTION_ERROR_MESSAGE;
@@ -21,6 +11,16 @@ import static com.heisyenberg.data.BookData.IMAGE_FILE_PATH;
 import static com.heisyenberg.data.BookData.PRICE_TO_LOW_ERROR_MESSAGE;
 import static com.heisyenberg.data.LoginData.ADMIN_EMAIL;
 import static com.heisyenberg.data.LoginData.ADMIN_PASSWORD;
+
+import com.heisyenberg.models.Book;
+import com.heisyenberg.pages.AddBookPage;
+import com.heisyenberg.pages.BooksPage;
+import com.heisyenberg.repositrories.BooksRepository;
+import com.heisyenberg.utils.DataGenerationUtil;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 @Feature("Add book test")
 public class AddBookTest extends BaseTest {

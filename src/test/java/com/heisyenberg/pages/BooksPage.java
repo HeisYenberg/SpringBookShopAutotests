@@ -1,13 +1,5 @@
 package com.heisyenberg.pages;
 
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
-import com.heisyenberg.models.Book;
-import io.qameta.allure.Step;
-
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.be;
 import static com.codeborne.selenide.Condition.exactText;
@@ -29,6 +21,13 @@ import static com.heisyenberg.utils.ElementsUtil.checkImageSrc;
 import static com.heisyenberg.utils.ElementsUtil.clickElementWithJavaScript;
 import static com.heisyenberg.utils.ElementsUtil.scrollToElement;
 import static com.heisyenberg.utils.ElementsUtil.waitAndClick;
+
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
+import com.heisyenberg.models.Book;
+import io.qameta.allure.Step;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class BooksPage extends BasePage {
     public static final String PAGE_URL = "/books";

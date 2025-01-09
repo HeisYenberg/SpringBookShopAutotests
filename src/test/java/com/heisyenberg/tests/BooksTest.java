@@ -1,19 +1,5 @@
 package com.heisyenberg.tests;
 
-import com.heisyenberg.models.Book;
-import com.heisyenberg.pages.BooksPage;
-import com.heisyenberg.pages.LoginPage;
-import com.heisyenberg.repositrories.CartRepository;
-import com.heisyenberg.utils.JsonDeserializerUtil;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
-import java.util.List;
-import java.util.stream.Collectors;
-
 import static com.codeborne.selenide.Selenide.open;
 import static com.heisyenberg.data.BooksData.BOOKS_NOT_FOUND_ALERT;
 import static com.heisyenberg.data.BooksData.BOOK_AUTHOR_TO_SEARCH;
@@ -25,6 +11,19 @@ import static com.heisyenberg.data.BooksData.MAX_BOOKS_PER_PAGE;
 import static com.heisyenberg.data.LoginData.USER_EMAIL;
 import static com.heisyenberg.data.LoginData.USER_ID;
 import static com.heisyenberg.data.LoginData.USER_PASSWORD;
+
+import com.heisyenberg.models.Book;
+import com.heisyenberg.pages.BooksPage;
+import com.heisyenberg.pages.LoginPage;
+import com.heisyenberg.repositrories.CartRepository;
+import com.heisyenberg.utils.JsonDeserializerUtil;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import java.util.List;
+import java.util.stream.Collectors;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 @Feature("Books page")
 public class BooksTest extends BaseTest {

@@ -1,10 +1,5 @@
 package com.heisyenberg.pages;
 
-import com.codeborne.selenide.SelenideElement;
-import io.qameta.allure.Step;
-
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.be;
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.have;
@@ -13,6 +8,10 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.heisyenberg.data.BookData.ADD_BOOK_HEADER;
 import static com.heisyenberg.utils.ElementsUtil.waitAndClick;
+
+import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
+import java.io.File;
 
 public class AddBookPage extends BasePage {
     private final SelenideElement header = $("h2");

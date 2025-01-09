@@ -13,13 +13,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CartItem {
-    @JsonProperty("book_id")
-    private int bookId;
-    @JsonProperty("book_title")
-    private String bookTitle;
-    @JsonProperty("image_name")
-    private String imageUrl;
-    @JsonProperty("book_price")
-    private Double bookPrice;
-    private int quantity;
+  @JsonProperty("book_id")
+  private int bookId;
+
+  @JsonProperty("book_title")
+  private String bookTitle;
+
+  @JsonProperty("image_name")
+  private String imageUrl;
+
+  @JsonProperty("book_price")
+  private Double bookPrice;
+
+  private int quantity;
 }
