@@ -41,12 +41,7 @@ public abstract class BaseTest {
   public void configure() {
     ChromeOptions capabilities = new ChromeOptions();
     capabilities.addArguments(
-        "--guest",
-        "--headless=new",
-        "--disable-gpu",
-        "--no-sandbox",
-        "--disable-dev-shm-usage",
-        "--accept-lang=ru-RU");
+        "--guest");
     Configuration.browserCapabilities = capabilities;
 
     SelenideLogger.addListener(
