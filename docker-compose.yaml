@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+  selenoid:
+    network_mode: bridge
+    image: "aerokube/selenoid:latest-release"
+    ports:
+      - "4444:4444"
+    volumes:
+      - "./config:/etc/selenoid"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+  selenoid-ui:
+    network_mode: bridge
+    image: "aerokube/selenoid-ui:latest-release"
+    ports:
+      - "8080:8080"
+    links:
+      - selenoid
+      - chrome
+    command: --selenoid-uri http://selenoid:4444
+
+  chrome:
+    network_mode: bridge
+    image: "selenoid/chrome"
+
+  test:
+    network_mode: bridge
+    image: "maven"
+    volumes:
+      - "./src:/tests/src"
+      - "./pom.xml:/tests/pom.xml"
+    working_dir: /tests
+    links:
+      - selenoid
+      - chrome
+    command: mvn clean test
