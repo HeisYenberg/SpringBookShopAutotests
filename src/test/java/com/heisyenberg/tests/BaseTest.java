@@ -40,7 +40,13 @@ public abstract class BaseTest {
   @BeforeClass
   public void configure() {
     ChromeOptions capabilities = new ChromeOptions();
-    capabilities.addArguments("--guest");
+    capabilities.addArguments(
+        "--guest",
+        "--headless=new",
+        "--disable-gpu",
+        "--no-sandbox",
+        "--disable-dev-shm-usage");
+
     capabilities.setCapability("enableVNC", true);
     Configuration.browserCapabilities = capabilities;
 
