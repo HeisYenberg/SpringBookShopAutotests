@@ -40,8 +40,8 @@ public abstract class BaseTest {
   @BeforeClass
   public void configure() {
     ChromeOptions capabilities = new ChromeOptions();
-    capabilities.addArguments(
-        "--guest");
+    capabilities.addArguments("--guest");
+    capabilities.setCapability("enableVNC", true);
     Configuration.browserCapabilities = capabilities;
 
     SelenideLogger.addListener(
