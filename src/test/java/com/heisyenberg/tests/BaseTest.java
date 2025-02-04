@@ -4,11 +4,13 @@ import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import com.heisyenberg.configs.SelenideConfig;
 import com.heisyenberg.listeners.LoggerListener;
 import com.heisyenberg.utils.LogLevel;
 import com.heisyenberg.utils.LoggingUtil;
 import io.qameta.allure.Epic;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -39,16 +41,20 @@ public abstract class BaseTest {
 
   @BeforeClass
   public void configure() {
+    SelenideConfig selenideConfig = ConfigFactory.create(SelenideConfig.class);
     ChromeOptions capabilities = new ChromeOptions();
-    capabilities.addArguments(
-        "--guest",
-        "--headless=new",
-        "--disable-gpu",
-        "--no-sandbox",
-        "--disable-dev-shm-usage");
+    capabilities.addArguments("--guest");
 
-    capabilities.setCapability("enableVNC", true);
     Configuration.browserCapabilities = capabilities;
+    Configuration.baseUrl = selenideConfig.baseUrl();
+    Configuration.browser = selenideConfig.browser();
+    Configuration.browserVersion = selenideConfig.browserVersion();
+    Configuration.headless = selenideConfig.headless();
+    Configuration.timeout = selenideConfig.timeout();
+    Configuration.pageLoadTimeout = selenideConfig.pageLoadTimeout();
+    Configuration.downloadsFolder = selenideConfig.downloadsFolder();
+    Configuration.reportsFolder = selenideConfig.reportsFolder();
+    Configuration.remote = selenideConfig.selenoidUrl();
 
     SelenideLogger.addListener(
         "AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));

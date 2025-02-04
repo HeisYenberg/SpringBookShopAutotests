@@ -1,18 +1,19 @@
 {
   "chrome": {
-    "default": "latest",
+    "default": "128.0",
     "versions": {
-      "latest": {
-        "image": "selenoid/chrome",
+      "128.0": {
+        "image": "selenoid/vnc_chrome:128.0",
         "port": "4444",
         "env": [
           "LANG=ru_RU.UTF-8",
           "LANGUAGE=ru:en",
           "LC_ALL=ru_RU.UTF-8"
         ],
-        "tmpfs": {"/tmp":"size=512m"}
+        "tmpfs": {
+          "/tmp": "size=512m"
+        }
       }
     }
   }
 }
-

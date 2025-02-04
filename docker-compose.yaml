@@ -1,37 +1,45 @@
 version: '3.9'
-
 services:
+
   selenoid:
     network_mode: bridge
-    image: "aerokube/selenoid:latest-release"
-    ports:
-      - "4444:4444"
+    image: aerokube/selenoid:latest-release
     volumes:
-      - "./config:/etc/selenoid"
+      - "./config/:/etc/selenoid:ro"
       - "/var/run/docker.sock:/var/run/docker.sock"
+    ports:
+      - "${SELENOID_PORT}:4444"
+    command: -listen :4444 -conf /etc/selenoid/browsers.json -video-output-dir /opt/selenoid/video/ -timeout 3m
 
   selenoid-ui:
     network_mode: bridge
-    image: "aerokube/selenoid-ui:latest-release"
+    image: aerokube/selenoid-ui:latest-release
     ports:
-      - "8080:8080"
+      - "${SELENOID_UI_PORT}:8080"
     links:
       - selenoid
-      - chrome
-    command: --selenoid-uri http://selenoid:4444
+    command: [ "--selenoid-uri", "http://selenoid:4444" ]
 
   chrome:
     network_mode: bridge
-    image: "selenoid/chrome"
+    image: "selenoid/vnc_chrome:128.0"
 
   test:
     network_mode: bridge
-    image: "maven"
+    image: "maven:3.9.9"
     volumes:
       - "./src:/tests/src"
       - "./pom.xml:/tests/pom.xml"
+      - "./.m2:/root/.m2"
     working_dir: /tests
     links:
       - selenoid
+      - selenoid-ui
       - chrome
-    command: mvn clean test
+    ports:
+      - "${ALLURE_PORT}:9090"
+    environment:
+      DATASOURCE_URL: ${DATASOURCE_URL}
+      BASE_URL: ${BASE_URL}
+      SELENOID_URL: ${SELENOID_URL}
+    command: mvn clean test allure:serve -D allure.serve.port=9090

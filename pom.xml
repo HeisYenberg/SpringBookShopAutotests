@@ -12,6 +12,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <selenide.version>6.19.1</selenide.version>
         <allure.version>2.13.10</allure.version>
         <aspectj.version>1.9.22.1</aspectj.version>
     </properties>
@@ -56,7 +57,12 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>6.19.1</version>
+            <version>${selenide.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide-selenoid</artifactId>
+            <version>${selenide.version}</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
