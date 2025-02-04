@@ -123,7 +123,7 @@ mvn allure:serve
 docker compose up
 ```
 
-### 7. Access Test Reports and Selenoid UI
+### 7. Access Test Reports and Selenoid UI (Docker)
 
 Allure Test Report: Open your browser and navigate to http://localhost:9090 to
 view the Allure report.
